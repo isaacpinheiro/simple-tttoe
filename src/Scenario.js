@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native';
 
-function Scenario() {
+function Scenario({navigation}) {
   return (
     <View>
       <Text>Scenario</Text>
