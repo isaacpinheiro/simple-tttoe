@@ -9,7 +9,7 @@ function Info({navigation}) {
   return (
     <View style={styles.infoContainer}>
       <Text style={styles.text1}>
-        A simple Tic Tac Toe game developed using React Native for sudy purposes.
+        A simple Tic Tac Toe game developed using React Native for study purposes.
       </Text>
       <Text style={styles.text2}>
         Developed by Isaac Pinheiro.
