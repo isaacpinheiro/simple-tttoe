@@ -19,7 +19,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/simple-tttoe-icon.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.isaacpinheiro.simpletttoe"
