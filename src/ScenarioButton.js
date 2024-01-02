@@ -4,7 +4,7 @@ function ScenarioButton(props) {
   return (
     <View>
       <View style={{ display: (props.status === '' ? 'flex' : 'none') }}>
-        <Pressable style={styles.button} onPress={props.action}></Pressable>
+        <Pressable style={styles.button} onPress={props.action} disabled={props.disabled}></Pressable>
       </View>
       <View style={[styles.xView, { display: (props.status === 'X' ? 'flex' : 'none') }]}>
         <Text style={styles.xText}>X</Text>

@@ -14,6 +14,7 @@ function Scenario({navigation}) {
   const [sb7, setSb7] = useState('');
   const [sb8, setSb8] = useState('');
   const [sb9, setSb9] = useState('');
+  const [isDisabled, setIsDisabled] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   const [modalMsg, setModalMsg] = useState('');
 
@@ -38,6 +39,7 @@ function Scenario({navigation}) {
     setSb7('');
     setSb8('');
     setSb9('');
+    setIsDisabled(false);
     setModalVisible(false);
     setModalMsg('');
 
@@ -54,6 +56,7 @@ function Scenario({navigation}) {
       || (s1 === 'X' && s5 === 'X' && s9 === 'X')
       || (s3 === 'X' && s5 === 'X' && s7 === 'X')) {
 
+        setIsDisabled(true);
         setModalVisible(true);
         setModalMsg('Winner: Player X');
 
@@ -66,6 +69,7 @@ function Scenario({navigation}) {
       || (s1 === 'O' && s5 === 'O' && s9 === 'O')
       || (s3 === 'O' && s5 === 'O' && s7 === 'O')) {
 
+        setIsDisabled(true);
         setModalVisible(true);
         setModalMsg('Winner: Player O');
 
@@ -73,6 +77,7 @@ function Scenario({navigation}) {
       && s4 !== '' && s5 !== '' && s6 !== ''
       && s7 !== '' && s8 !== '' && s9 !== '') {
 
+        setIsDisabled(true);
         setModalVisible(true);
         setModalMsg('Game tied');
 
@@ -267,35 +272,35 @@ function Scenario({navigation}) {
         <View style={{ marginBottom: 80, flexDirection: 'column' }}>
           <View style={{ flexDirection: 'row' }}>
             <View style={{ margin: 5 }}>
-              <ScenarioButton status={sb1} action={pressSb1} />
+              <ScenarioButton status={sb1} action={pressSb1} disabled={isDisabled} />
             </View>
             <View style={{ margin: 5 }}>
-              <ScenarioButton status={sb2} action={pressSb2} />
+              <ScenarioButton status={sb2} action={pressSb2} disabled={isDisabled} />
             </View>
             <View style={{ margin: 5 }}>
-              <ScenarioButton status={sb3} action={pressSb3} />
-            </View>
-          </View>
-          <View style={{ flexDirection: 'row' }}>
-            <View style={{ margin: 5 }}>
-              <ScenarioButton status={sb4} action={pressSb4} />
-            </View>
-            <View style={{ margin: 5 }}>
-              <ScenarioButton status={sb5} action={pressSb5} />
-            </View>
-            <View style={{ margin: 5 }}>
-              <ScenarioButton status={sb6} action={pressSb6} />
+              <ScenarioButton status={sb3} action={pressSb3} disabled={isDisabled} />
             </View>
           </View>
           <View style={{ flexDirection: 'row' }}>
             <View style={{ margin: 5 }}>
-              <ScenarioButton status={sb7} action={pressSb7} />
+              <ScenarioButton status={sb4} action={pressSb4} disabled={isDisabled} />
             </View>
             <View style={{ margin: 5 }}>
-              <ScenarioButton status={sb8} action={pressSb8} />
+              <ScenarioButton status={sb5} action={pressSb5} disabled={isDisabled} />
             </View>
             <View style={{ margin: 5 }}>
-              <ScenarioButton status={sb9} action={pressSb9} />
+              <ScenarioButton status={sb6} action={pressSb6} disabled={isDisabled} />
+            </View>
+          </View>
+          <View style={{ flexDirection: 'row' }}>
+            <View style={{ margin: 5 }}>
+              <ScenarioButton status={sb7} action={pressSb7} disabled={isDisabled} />
+            </View>
+            <View style={{ margin: 5 }}>
+              <ScenarioButton status={sb8} action={pressSb8} disabled={isDisabled} />
+            </View>
+            <View style={{ margin: 5 }}>
+              <ScenarioButton status={sb9} action={pressSb9} disabled={isDisabled} />
             </View>
           </View>
         </View>
